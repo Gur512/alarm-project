@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+:root {
+    --app-dark-background: #1a1d28;
+}
+
+body {
+    background-color: var(--app-dark-background);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container {
+    width: min(100% - 32px, 1080px);
+    margin-inline: auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 70px;
+    font-weight: 400;
+    color: #fff;
+}
+
+p {
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+
+form {
+    display: flex;
+    gap: 10px;
+
+    input  {
+        padding: 10px 20px;
+        border: none;
+        width: 80px;
+        height: 40px;
+        border-radius: 50px;
+        color: #fff;
+        background-color: #333;
+    }
+
+    .btn {
+        background-color: #1db954; 
+        color: white; 
+        width: 150px;
+        height: 40px;
+        border: none; 
+        border-radius: 50px; 
+        cursor: pointer; 
+        font-size: 16px; 
+        font-weight: 600;
+        transition: background-color 0.3s ease; 
+    }
+    .btn:hover {
+        background-color: #6ac48a;
+    }
+}
+
+.ringing {
+    color: #1db954;
+    animation: flash 1s infinite;
+}
+
+@keyframes flash {
+    0%, 100% { opacity: 1;}
+    50% { opacity: 0.5; }
+}
