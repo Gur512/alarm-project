@@ -13,7 +13,7 @@ const minutesInput = select('.minutes');
 const btn = select('.btn');
 const message = select('.feedback');
 
-const alarmSound = new Audio('./assets/Audio/six.mp3');
+const alarmSound = new Audio('./assets/audio/six.mp3');
 alarmSound.type = 'audio/mp3';
 let alarmTime = null;
 
@@ -28,7 +28,6 @@ function formatTime(date) {
         minute: '2-digit',
         hour12: false   // I use this to enforce 24-hour format because by default localeString is 12h format
     };
-
     let result = date.toLocaleTimeString('en-CA', options);
     return result;
 }
@@ -42,8 +41,8 @@ function displayCurrentTime() {
 function checkAlarm(currentTime) {
     if (alarmTime && formatTime(currentTime) === alarmTime) {
         alarmSound.play();
-        message.innerText = 'Alarm is ringing!!';
         clock.classList.add('ringing');
+        clock.style.color = '#1db954';
         
         setTimeout(() => {
             clock.classList.remove('ringing');
